@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <!--  width=device-width的宽度 height=height-viewport的高度
+        initial-scale 初始的缩放比例
+        user-scalable 用户是否可以手动缩放
+    -->
+    <title>老人首页</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-zj.css">
+    <link rel="stylesheet" href="css/parentaccount.css">
+</head>
+<body>
+<!--导航-->
+<nav class="navbar navbar-default" style="background:#ADD8E6">
+    <div class="container"  >
+        <!--小屏幕导航按钮和logo-->
+        <div class="navbar-header" style="">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style=" margin-top: 20px">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="index.html" class="navbar-brand" style="margin-left: -120px;margin-top: -16px;"><img src="img/13.png"></a>
+        </div>
+        <!--小屏幕导航按钮和logo-->
+        <!--导航-->
+        <div class="navbar-collapse collapse" style="margin-top: 20px">
+            <ul class="nav navbar-nav ">
+                <li><a href="index.html" ><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;首页</a></li>
+                <li><a href="message_list.html"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;老人信息</a></li>
+                <li><a href="tutelage.html"><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;&nbsp;健康监护</a></li>
+                <li><a href="archives.html"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;告警信息</a></li>
+                <li class="active"><a href="user_massage.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;个人信息</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        admin
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                        <li><a href="index.html"><span class="glyphicon glyphicon-screenshot"></span>&nbsp;&nbsp;前台首页</a></li>
+                        <li><a href="index.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;个人首页</a></li>
+                        <li><a href="index.html"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;个人设置</a></li>
+                        <li><a href="index.html"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;账户中心</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;退出</a></li>
+            </ul>
+        </div>
+        <!--导航-->
+    </div>
+</nav>
+<!--导航-->
+<section class="content">
+
+
+    <div class="col-md-2">
+        <div class="tabTip">
+            <ul class="nav nav-pills nav-stacked" role="tablist">
+                <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab" id="showlist">账户信息</a></li>
+                <li role="presentation"><a href="#profile" role="tab" data-toggle="tab" id="hlist">修改密码</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-10" >
+
+        <div class="tabContent" style="padding: 10px">
+            <!-- 面板区 -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home" style="overflow-x:auto;height: 640px;">
+                    <form id="saveparent">
+                        <h4>基本信息</h4>
+                        <table class="table">
+                            <col style="width: 10%" />
+                            <col style="width: 35%" />
+                            <col style="width: 10%" />
+                            <col style="width: 45%" />
+                            <tr><td >姓名:</td><td><input type="text" id="infoId" name="tUserInfo.infoName" class="form-control" value="王五" readonly> </td><td >性别:</td><td><select class="form-control " style="width:400px;" id="infoSex" name="tUserInfo.infoSex" disabled>
+                                <option>男</option>
+                                <option>女</option>
+
+                            </select></td></tr>
+                            <tr><td >电话:</td><td><input type="text" id="infoTel" name="tUserInfo.infoTel"  class="form-control" value="110" readonly> </td><td >出生年月:</td><td><input type="text" id="infoAge" name="tUserInfo.infoAge"  class="form-control"   disabled></td></tr>
+                            <tr><td >国籍:</td><td><select class="form-control " style="width:400px;" id="pNationality" name="pNationality" disabled>
+                                <option >中国</option>
+                                <option>日本</option>
+                                <option>美国</option>
+                                <option>其他</option>
+                            </select> </td><td >婚姻:</td><td><select class="form-control " style="width:400px;" id="infoMarriage" name="tUserInfo.infoMarriage" disabled>
+                                <option>已婚</option>
+                                <option>未婚</option>
+
+                            </select></td></tr>
+                            <tr><td>民族:</td><td><select class="form-control " style="width:400px;" id="infoNation" name="tUserInfo.infoNation"  disabled>
+                                <option>汉族</option>
+                                <option>其他</option>
+
+                            </select></td><td></td><td></td></tr>
+                        </table>
+                        <h4>详细信息</h4>
+                        <table class="table" >
+                            <col style="width: 10%" />
+                            <col style="width: 35%" />
+                            <col style="width: 10%" />
+                            <col style="width: 45%" />
+                            <tr><td >出生地:</td><td><input type="text" id="pBirthplace" class="form-control" name="pBirthplace" value="山西太原"  readonly> </td><td >居住地:</td><td><input type="text" id="pAddress" class="form-control" name="pAddress" value="山西太原" readonly></td></tr>
+                            <tr><td >身份证:</td><td><input type="text" id="pIdnum" class="form-control" name="pIdnum" value="112233" readonly> </td><td >所属社区:</td><td><select class="form-control " style="width:400px;" id="cName" name="cName"  disabled>
+                            </select></td></tr>
+                            <tr><td >社区编号:</td><td><div><input type="text" id="pCnum" name="pCnum" class="form-control" readonly></div> </td><td >社保编号:</td><td><input type="text" id="pCno" name="pCno" class="form-control" value="6516513" readonly></td></tr>
+                            <tr><td >血型:</td><td> <select class="form-control " style="width:400px;" id="pBlood" name="pBlood" disabled>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>AB</option>
+                                <option>O</option>
+                            </select></td><td >学历:</td><td><select class="form-control " style="width:400px;" id="pEducational" name="pEducational" disabled>
+                                <option>初中</option>
+                                <option>高中</option>
+                                <option>本科</option>
+                                <option>硕士</option>
+                                <option>博士</option>
+                            </select></td></tr>
+                        </table>
+                        <h4>工作信息</h4>
+                        <table class="table">
+                            <col style="width: 10%" />
+                            <col style="width: 35%" />
+                            <col style="width: 10%" />
+                            <col style="width: 45%" />
+                            <tr><td >就职单位:</td><td><input type="text" id="infoId1" name="tUserInfo.yiyuanName" class="form-control" value="中北大学" readonly> </td><td >就职部门:</td><td><input type="text" id="infoId2" name="tUserInfo.keshiName" class="form-control" value="软件学院" readonly> </td></tr>
+                            <tr></tr>
+
+                        </table>
+
+                    </form>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-info" style="width:70px ;margin-right: 20px;" id="editbt">修改</button>
+                        <button type="button" class="btn btn-info hidden" style="width:70px;" id="savebt" >保存</button>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane "id="profile">
+                    <form class="form-horizontal" style="margin-left: 350px;margin-top: 100px" id="updatepass">
+                        <div class="form-group">
+                            <label for="oldpass" class="col-sm-2 control-label">旧密码</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="oldpass" name="password"  style="width: 200px">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="newpass" class="col-sm-2 control-label">新密码</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="newpass" name="oldpass" style="width: 200px" >
+                            </div>
+                        </div>
+
+                    </form>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-info" style="width:197px ;margin-right: 20px;" onclick="editpass()">修改</button>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                我们比您 更懂您的身体💗
+            </div>
+
+        </div>
+    </div>
+</footer>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="/js/parentaccount.js"></script>
+<script>
+    $(function () {
+        var result=${data}
+        var community=${list}
+        var opt=""
+        for (var i=0;i<community.length;i++)
+        {
+            opt+=" <option value='"+community[i].cNum+"'>"+community[i].cName+"</option>"
+        }
+        $("#cName").append(opt);
+
+        var date=new Date(result.tUserInfo.infoAge)
+        $("#infoAge").val(date.format('yyyy-MM-dd'))
+        $("#pEducational").val(result.pEducational);
+        //infoSex
+        $("#infoSex").val(result.tUserInfo.infoSex)
+        $("#pNationality").val(result.pNationality)
+        var marriage=result.tUserInfo.infoMarriage==1?"已婚":"未婚";
+        $("#pCnum").val($("#cName").val())
+        $("#infoMarriage").val(marriage)
+        $("#infoNation").val(result.tUserInfo.infoNation)
+        $("#pBlood").val(result.pBlood)
+        $("#pInfo1").val(result.pInfo1)
+        $("#pInfo2").val(result.pInfo2)
+        $("#pInfo3").val(result.pInfo3)
+        $("#pInfo4").val(result.pInfo4)
+    })
+    laydate.render({
+        elem: '#infoAge'
+
+    });
+
+
+</script>
+</body>
+</html>

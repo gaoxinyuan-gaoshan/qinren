@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <!--  width=device-width的宽度 height=height-viewport的高度
+        initial-scale 初始的缩放比例
+        user-scalable 用户是否可以手动缩放
+    -->
+    <title>老人首页</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-zj.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        .navnn{
+            height: 81%;
+            width: 100%;
+            position: relative;
+        }
+        .navnn-img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+<!--导航-->
+<nav class="navbar navbar-default" style="background:#ADD8E6">
+    <div class="container"  >
+        <!--小屏幕导航按钮和logo-->
+        <div class="navbar-header" style="">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style=" margin-top: 20px">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="index.html" class="navbar-brand" style="margin-left: -120px;margin-top: -16px;"><img src="img/13.png"></a>
+        </div>
+        <!--小屏幕导航按钮和logo-->
+        <!--导航-->
+        <div class="navbar-collapse collapse" style="margin-top: 20px">
+            <ul class="nav navbar-nav ">
+                <li><a href="index.html" ><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;首页</a></li>
+                <li><a href="message_list.html"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;健康数据</a></li>
+                <li><a href="tutelage.html"><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;&nbsp;健康监护</a></li>
+                <li><a href="archives.html"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;健康档案</a></li>
+                <li><a href="home_doctor.html"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;家庭医生</a></li>
+                <li class="active"><a href="order.html"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;&nbsp;预约服务</a></li>
+                <li><a href="user_massage.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;个人信息</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        admin
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                        <li><a href="index.html"><span class="glyphicon glyphicon-screenshot"></span>&nbsp;&nbsp;前台首页</a></li>
+                        <li><a href="index.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;个人首页</a></li>
+                        <li><a href="index.html"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;个人设置</a></li>
+                        <li><a href="index.html"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;账户中心</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;退出</a></li>
+            </ul>
+        </div>
+        <!--导航-->
+    </div>
+</nav>
+<div class="navnn">
+    <div class="navnn-img" >
+        <img src="img/1.jpg">
+
+    </div>
+
+</div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                我们比您 更懂您的身体💗
+            </div>
+
+        </div>
+    </div>
+</footer>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

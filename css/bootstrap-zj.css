@@ -1,0 +1,10 @@
+body{
+    font-family: '微软雅黑',sans-serif;
+
+}
+/*footer*/
+footer{
+    font-weight:400 ;
+    text-align: center;
+    padding: 20px;
+}

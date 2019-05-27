@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <!--  width=device-width的宽度 height=height-viewport的高度
+        initial-scale 初始的缩放比例
+        user-scalable 用户是否可以手动缩放
+    -->
+    <title>老人首页</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-zj.css">
+    <style>
+        /* Custom Styles */
+        ul.nav-tabs{
+            width: 140px;
+            margin-top: 20px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+        }
+        ul.nav-tabs li{
+            margin: 0;
+            border-top: 1px solid #ddd;
+        }
+        ul.nav-tabs li:first-child{
+            border-top: none;
+        }
+        ul.nav-tabs li a{
+            margin: 0;
+            padding: 8px 16px;
+            border-radius: 0;
+        }
+        ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
+            color: #fff;
+            background: #0088cc;
+            border: 1px solid #0088cc;
+        }
+        ul.nav-tabs li:first-child a{
+            border-radius: 4px 4px 0 0;
+        }
+        ul.nav-tabs li:last-child a{
+            border-radius: 0 0 4px 4px;
+        }
+        ul.nav-tabs.affix{
+            top: 30px; /* Set the top position of pinned element */
+        }
+        .bar-legend li span {
+            width: 1em;
+            height: 1em;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .bar-legend {
+            list-style: none;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        .navnn{
+            height: 91%;
+            width: 100%;
+        }
+        .wrap{
+            float: left;
+            height: 100%;
+            width: 260px;
+            background-color: #363a45;
+            margin-top: -20px;
+        }
+        .head{
+            width: 100%;
+            height: 60px;
+            background-color: #44495a;
+            font-size: 20px;
+            color: #fff;
+            line-height: 60px;
+            text-align: center;
+        }
+        .navn{
+            width: 250px;
+            margin: 10px 5px;
+        }
+        .navn-ul{
+            margin:0;
+        }
+        .navn-list{
+            margin-bottom:5px ;
+        }
+        .navn-list h2{
+            position: relative;
+            margin: 0px;
+            padding: 15px 0;
+            background-color: #3889d4;
+            text-align: center;
+            color: #fff;
+            font-size: 15px;
+            transition:1s;
+        }
+        .navn-list h2.on{
+            background-color: #393c4a;
+        }
+        .navn-list i{
+            position: absolute;
+            right: 10px;
+            top: 16px;
+            border: 8px solid transparent;
+            border-left-color: #fff;
+            transform:rotate(0deg);
+            transform-origin:1px 7px;
+            transition:1s;
+        }
+        .navn-list i.on{
+            transform:rotate(90deg) ;
+        }
+        .hidee{
+            overflow: hidden;
+            height: 0;
+            transition:1s;
+        }
+        .hidee h5{
+            margin: 0px;
+            padding: 10px 0;
+            border-bottom: 1px solid #42495d;
+            background-color: #282c3a;
+            text-align: center;
+            color: #fff;
+        }
+        .myselect{
+            float: left;
+            width: 176px;
+            margin-left: 20px;
+        }
+        .hiit{
+            float: right;
+            width: 1200px;
+        }
+        .hiit1{
+            float: right;
+            width: 1200px;
+            display: none;
+        }
+        .navn-list h5{
+            cursor: pointer;
+        }
+        .hiit2{
+            float: right;
+            width: 1200px;
+            display: none;
+        }
+        a {
+            list-style:none;
+        }
+    </style>
+</head>
+<body data-spy="scroll" data-target="#myScrollspy">
+
+<!--导航-->
+<nav class="navbar navbar-default" style="background:#ADD8E6">
+    <div class="container"  >
+        <!--小屏幕导航按钮和logo-->
+        <div class="navbar-header" style="">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style=" margin-top: 20px">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="index.html" class="navbar-brand" style="margin-left: -120px;margin-top: -16px;"><img src="img/13.png"></a>
+        </div>
+        <!--小屏幕导航按钮和logo-->
+        <!--导航-->
+        <div class="navbar-collapse collapse" style="margin-top: 20px">
+            <ul class="nav navbar-nav ">
+                <li><a href="index.html" ><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;首页</a></li>
+                <li class="active"><a href="message_list.html"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;老人信息</a></li>
+                <li><a href="tutelage.html"><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;&nbsp;健康监护</a></li>
+                <li><a href="archives.html"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;告警信息</a></li>
+                <li><a href="user_massage.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;个人信息</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        admin
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                        <li><a href="index.html"><span class="glyphicon glyphicon-screenshot"></span>&nbsp;&nbsp;前台首页</a></li>
+                        <li><a href="index.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;个人首页</a></li>
+                        <li><a href="index.html"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;个人设置</a></li>
+                        <li><a href="index.html"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;账户中心</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;退出</a></li>
+            </ul>
+        </div>
+        <!--导航-->
+    </div>
+</nav>
+<!--导航-->
+<div class="navnn">
+
+    <div class="wrap">
+        <div class="head">
+            健康档案分类
+        </div>
+        <div class="navn">
+            <ul class="navn-ul">
+                <li class="navn-list">
+                    <h2>
+                        绑定老人1
+                        <i></i>
+                    </h2>
+                    <div class="hidee">
+                        <ul>
+                            <li id="emm1"><h5><a href="#section-1"> 血压信息</a></h5></li>
+                            <li id="emm2"><h5><a href="#section-2">血糖信息</a></h5></li>
+                            <li id="emm3"><h5><a href="#section-3">血脂信息</a></h5></li>
+                            </ul>
+                    </div>
+                </li>
+                <li class="navn-list">
+                    <h2>
+                        绑定老人2
+                        <i></i>
+                    </h2>
+                    <div class="hidee">
+                        <h5 id="emm4">血压信息</h5>
+                        <h5 id="emm5">血糖信息</h5>
+                        <h5 id="emm6">血脂信息</h5>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="hiit" id="hiit" style="height:640px;overflow-x:auto;">
+        <h2 id="section-1">血压信息</h2>
+        <hr>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background: #AFEEEE">今日血压</div>
+                <div class="panel-body">
+                    <li class="list-group-item">
+                        高压：
+                    </li>
+                    <li class="list-group-item">
+                        低压：
+                    </li>
+                </div></div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background: #AFEEEE">昨日血压</div>
+                <div class="panel-body">
+                    <li class="list-group-item">
+                        高压：
+                    </li>
+                    <li class="list-group-item">
+                        低压：
+                    </li>
+                </div></div></div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background: #AFEEEE">标准血压</div>
+                <div class="panel-body">
+                    <li class="list-group-item">
+                        高压：120
+                    </li>
+                    <li class="list-group-item">
+                        低压：80
+                    </li>
+                </div></div></div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">血压信息</div>
+                <div class="panel-body">
+                    <canvas id="canvas" class="col-md-12"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">血压信息</div>
+                <div class="panel-body">
+                    <canvas id="bar" class="col-md-12"></canvas>
+                    <div id="legend"></div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <h2 id="section-2">血糖信息</h2>
+        <hr>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background: #DB7093">今日血糖</div>
+                <div class="panel-body">
+                    <li class="list-group-item">
+                        今日血糖：
+                    </li>
+                </div></div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background: #DB7093">昨日血糖</div>
+                <div class="panel-body">
+                    <li class="list-group-item">
+                        昨日血糖：
+                    </li>
+                </div></div></div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background: #DB7093">标准血糖</div>
+                <div class="panel-body">
+                    <li class="list-group-item">
+                        标准血糖：120
+                    </li>
+                </div></div></div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">血糖信息</div>
+                <div class="panel-body">
+                    <canvas id="can" class="col-md-12"></canvas>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">血糖信息</div>
+                <div class="panel-body">
+                    <canvas id="bar1" class="col-md-12"></canvas>
+                    <div id="legend1"></div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <h2 id="section-3">血脂信息</h2>
+        <hr>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background: #3CB371">今日血脂</div>
+                <div class="panel-body">
+                    <li class="list-group-item">
+                        今日血脂：
+                    </li>
+                </div></div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background: #3CB371">昨日血脂</div>
+                <div class="panel-body">
+                    <li class="list-group-item">
+                        昨日血脂：
+                    </li>
+                </div></div></div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background:#3CB371">标准血脂</div>
+                <div class="panel-body">
+                    <li class="list-group-item">
+                        标准血脂：120
+                    </li>
+                </div></div></div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">血脂信息</div>
+                <div class="panel-body">
+                    <canvas id="xz" class="col-md-12"></canvas>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">血脂信息</div>
+                <div class="panel-body">
+                    <canvas id="bar2" class="col-md-12"></canvas>
+                    <div id="legend2"></div>
+                </div>
+            </div>
+
+    </div>
+    </div>
+    </div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                我们比您 更懂您的身体💗
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    var aList=document.querySelectorAll('.navn-list h2');
+    var aHide=document.querySelectorAll('.hidee');
+    var aIcon=document.querySelectorAll('.navn-list i');
+//    var aPost1=document.getElementById('emm1');
+//    var aPost2=document.getElementById('emm2');
+//    var aPost3=document.getElementById('emm3');
+    var lastIndex= 0;
+    for(var i=0;i<aList.length;i++){
+        aList[i].index = i;
+        aList[i].isClick= false;
+        aList[i].onclick=function(){
+            aHide[lastIndex].style.height='0';
+            aList[lastIndex].className='';
+            aIcon[lastIndex].className='';
+            if(this.isClick){
+                this.isClick =false;
+            }
+            else{
+                aHide[this.index].style.height='150px';
+                aList[this.index].className='on';
+                aIcon[this.index].className='on';
+                aList[lastIndex].isClick=false;
+                this.isClick = true;
+                lastIndex = this.index;
+            }
+
+        }
+    }
+//    aPost1.onclick=function(){
+//        document.getElementById("hiit").style.display='block';
+//        document.getElementById("hiit1").style.display='none';
+//        document.getElementById("hiit2").style.display='none';
+//    }
+//    aPost2.onclick=function(){
+//        document.getElementById("hiit").style.display='none';
+//        document.getElementById("hiit1").style.display='block';
+//        document.getElementById("hiit2").style.display='none';
+//    }
+//    aPost3.onclick=function(){
+//        document.getElementById("hiit").style.display='none';
+//        document.getElementById("hiit1").style.display='none';
+//        document.getElementById("hiit2").style.display='block';
+//    }
+
+
+</script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/chart.js"></script>
+<script src="js/script.js"></script>
+<script src="js/xt.js"></script>
+<script src="js/xz.js"></script>
+<script src="js/xzz.js"></script>
+</body>
+</html>

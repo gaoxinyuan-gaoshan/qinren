@@ -1,0 +1,445 @@
+
+<!DOCTYPE html  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml">
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <!--  width=device-width的宽度 height=height-viewport的高度
+        initial-scale 初始的缩放比例
+        user-scalable 用户是否可以手动缩放
+    -->
+    <title>老人首页</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-zj.css">
+    <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+        html,body{
+            height: 100%;
+        }
+        .navnn{
+            height: 91%;
+            width: 100%;
+        }
+        .wrap{
+            float: left;
+            height: 100%;
+            width: 260px;
+            background-color: #363a45;
+            margin-top: -20px;
+        }
+        .head{
+            width: 100%;
+            height: 60px;
+            background-color: #44495a;
+            font-size: 20px;
+            color: #fff;
+            line-height: 60px;
+            text-align: center;
+        }
+        .navn{
+            width: 250px;
+            margin: 10px 5px;
+        }
+        .navn-ul{
+            margin:0;
+        }
+        .navn-list{
+            margin-bottom:5px ;
+        }
+        .navn-list h2{
+            position: relative;
+            margin: 0px;
+            padding: 15px 0;
+            background-color: #3889d4;
+            text-align: center;
+            color: #fff;
+            font-size: 15px;
+            transition:1s;
+        }
+            .navn-list h2.on{
+                background-color: #393c4a;
+            }
+        .navn-list i{
+            position: absolute;
+            right: 10px;
+            top: 16px;
+            border: 8px solid transparent;
+            border-left-color: #fff;
+            transform:rotate(0deg);
+            transform-origin:1px 7px;
+            transition:1s;
+        }
+            .navn-list i.on{
+                transform:rotate(90deg) ;
+            }
+        .hidee{
+            overflow: hidden;
+            height: 0;
+            transition:1s;
+        }
+        .hidee h5{
+            margin: 0px;
+            padding: 10px 0;
+            border-bottom: 1px solid #42495d;
+            background-color: #282c3a;
+            text-align: center;
+            color: #fff;
+        }
+            .myselect{
+                float: left;
+                width: 176px;
+                margin-left: 20px;
+            }
+        .hiit{
+            float: right;
+            width: 1200px;
+        }
+        .hiit1{
+            float: right;
+            width: 1200px;
+            display: none;
+        }
+        .navn-list h5{
+            cursor: pointer;
+        }
+            .hiit2{
+                float: right;
+                width: 1200px;
+                display: none;
+            }
+
+    </style>
+</head>
+<body>
+<!--导航-->
+<nav class="navbar navbar-default" style="background:#ADD8E6">
+    <div class="container"  >
+        <!--小屏幕导航按钮和logo-->
+        <div class="navbar-header" style="">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style=" margin-top: 20px">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="index.html" class="navbar-brand" style="margin-left: -120px;margin-top: -16px;"><img src="img/13.png"></a>
+        </div>
+        <!--小屏幕导航按钮和logo-->
+        <!--导航-->
+        <div class="navbar-collapse collapse" style="margin-top: 20px">
+            <ul class="nav navbar-nav ">
+                <li><a href="index.html" ><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;首页</a></li>
+                <li><a href="message_list.html"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;老人信息</a></li>
+                <li><a href="tutelage.html"><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;&nbsp;健康监护</a></li>
+                <li class="active"><a href="archives.html"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;告警信息</a></li>
+                <li><a href="user_massage.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;个人信息</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        admin
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                        <li><a href="index.html"><span class="glyphicon glyphicon-screenshot"></span>&nbsp;&nbsp;前台首页</a></li>
+                        <li><a href="index.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;个人首页</a></li>
+                        <li><a href="index.html"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;个人设置</a></li>
+                        <li><a href="index.html"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;账户中心</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;退出</a></li>
+            </ul>
+        </div>
+        <!--导航-->
+    </div>
+</nav>
+<!--导航-->
+<div class="navnn">
+
+    <div class="hiit" id="hiit">
+        <form class="form-horizontal" id="myform">
+            <div class="form-group">
+                <div class="col-md-4">
+                    <div style="float: left;"><label for="sitem" class="" style="line-height: 34px">老人姓名</label></div>
+                    <div class="myselect">
+                        <select class="form-control" id="sitem">
+                            <option class="" value="" selected="selected" > --请选择--</option>
+                            <option value="xt"> 老人1</option>
+                            <option value="xy"> 老人2</option>
+                            <option value="xl"> 老人3</option>
+                            </select>
+                    </div>
+                </div>
+                <div class="col-md-4" >
+                    <div style="float: left;"><label for="sflag" class="" style="line-height: 34px;">预警项目</label></div>
+                    <div class="myselect">
+                        <select class="form-control" id="sflag">
+                            <option class="" value="" selected="selected" > --请选择--</option>
+                            <option value="2">血糖</option>
+                            <option value="1">血压</option>
+                            <option value="0">血氧</option>
+
+                            </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-info " style="width:70px;text-align: center" id="selectlist">查询</button>
+
+                </div>
+            </div>
+        </form>
+        <div class="col-md-9">
+            <div class="panel panel-danger">
+                <div class="panel-heading">预警信息</div>
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>老人姓名</th>
+                            <th>预警项目</th>
+                            <th>昨日</th>
+                            <th>今日</th>
+                            <th>标准</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">王五</th>
+                            <th scope="row">血压</th>
+                            <td>100/150</td>
+                            <td>100/140</td>
+                            <td>80/120</td>
+                            <td><a href="">忽略</a> </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">王五</th>
+                            <th scope="row">血糖</th>
+                            <td>4.2</td>
+                            <td>4.5</td>
+                            <td>4-5</td>
+                            <td><a href="">忽略</a> </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">王五</th>
+                            <th scope="row">血压</th>
+                            <td>100/150</td>
+                            <td>100/140</td>
+                            <td>80/120</td>
+                            <td><a href="">忽略</a> </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">王五</th>
+                            <th scope="row">血压</th>
+                            <td>100/150</td>
+                            <td>100/140</td>
+                            <td>80/120</td>
+                            <td><a href="">忽略</a> </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hiit1" id="hiit1">
+        <form class="form-horizontal" id="myform1">
+            <div class="form-group">
+                <div class="col-md-4">
+                    <div style="float: left;"><label for="sitem1" class="" style="line-height: 34px">预警项目</label></div>
+                    <div class="myselect">
+                        <select class="form-control" id="sitem1">
+                            <option class="" value="" selected="selected" > --请选择--</option>
+                            <option value="xt"> 血糖</option>
+                            <option value="xy"> 血氧</option>
+                            <option value="xl"> 心率</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4" >
+                    <div style="float: left;"><label for="sflag" class="" style="line-height: 34px;">状态1</label></div>
+                    <div class="myselect">
+                        <select class="form-control" id="sflag1">
+                            <option class="" value="" selected="selected" > --请选择--</option>
+                            <option value="2">已处理</option>
+                            <option value="1">未处理</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-info " style="width:70px;text-align: center" id="selectlist1">查询</button>
+
+                </div>
+            </div>
+        </form>
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered">
+                <tr>
+                    <th style="text-align: center;">
+                        <input type="checkbox" class="selectAll" title="全选">
+                    </th>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>生日</th>
+                    <th>身份证号</th>
+                    <th>院系</th>
+                    <th>专业</th>
+                    <th>班级</th>
+                    <!-- <th>籍贯</th>
+                    <th>家庭地址</th>
+                    <th>QQ</th>
+                    <th>手机</th>
+                    <th>邮箱</th> -->
+                    <th>状态</th>
+                    <!-- <th>创建时间</th>
+                    <th>创建人</th>
+                    <th>修改时间</th>
+                    <th>修改人</th> -->
+                    <th style="text-align: center;">操作</th>
+                </tr>
+                <% for(var i = 0; i < students.length; i++) { %>
+                <tr>
+                    <td style="text-align: center;">
+                        <input type="checkbox" class="selectSingle" title="选中" data-id="<%=students[i].id %>">
+                    </td>
+                    <td style="width: 150px;"><%= students[i].sno %></td>
+                    <td><%= students[i].name %></td>
+                    <td><%= students[i].sex %></td>
+                    <td><%= formatDate(students[i].birthday, false) %></td>
+                    <td><%= students[i].card %></td>
+                    <td><%= students[i].departName %></td>
+                    <td><%= students[i].majorName %></td>
+                    <td><%= students[i].className %></td>
+                    <!-- <td><%= students[i].nativePlace %></td>
+                    <td><%= students[i].address %></td>
+                    <td><%= students[i].qq %></td>
+                    <td><%= students[i].phone %></td>
+                    <td><%= students[i].email %></td> -->
+                    <td>
+                        <% if (students[i].status == 0) { %>
+                        正常
+                        <% } else { %>
+                        <span style="color: red;">删除</span>
+                        <% } %>
+                    </td>
+                    <!-- <td><%= formatDate(students[i].createTime, true) %></td>
+                    <td><%= students[i].createUserName %></td>
+                    <td><%= formatDate(students[i].updateTime, true) %></td>
+                    <td><%= students[i].updateUserName %></td> -->
+                    <td style="width: 130px; text-align: center;">
+                        <a class="btn btn-success btn-xs" href="/students/edit/<%=students[i].id%>" role="button">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                            编辑
+                        </a>
+                        <!-- data-xx  自定义属性 -->
+                        <a class="btn btn-danger btn-xs remove" href="javascript:void(0)" role="button"  data-id="<%= students[i].id %>">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true" ></span>
+                            删除
+                        </a>
+                    </td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+    <div class="hiit2" id="hiit2">
+        <form class="form-horizontal" id="myform2">
+            <div style="float: left;"><label for="sitem2" class="" style="line-height: 34px">新增项目</label></div>
+            <div class="myselect col-lg-10">
+                <select class="form-control" id="sitem2">
+                    <option class="" value="" selected="selected" > --请选择--</option>
+                    <option value="zy"> 住院病历</option>
+                    <option value="mz"> 门诊病历</option>
+                </select>
+            </div>
+        </form>
+        <div style="margin-right: 30px;margin-top: 80px">
+            <form id="inspectionForm">
+                <table class="table text-right">
+                    <col style="width: 15%"/>
+                    <col style="width: 35%"/>
+                    <col style="width: 10%"/>
+                    <col style="width: 40%"/>
+                    <tr><td>就诊医院:</td><td><input type="text" class="form-control" id="tname" style="width: 240px"></td></tr>
+                    <tr><td>就诊科室:</td><td><input type="text" class="form-control" id="tdname" style="width: 240px"></td></tr>
+                    <tr><td>主治医生:</td><td><input type="text" class="form-control" id="tinfo" style="width: 240px"></td></tr>
+                    <tr><td>就诊时间:</td><td><input type="text" class="form-control" id="ttime" style="width: 240px"></td></tr>
+                    <tr><td>病症:</td><td><input type="text" class="form-control" id="telnum" style="width: 240px"></td></tr>
+                    <tr><td>备注:</td><td><textarea class="form-control" cols="30" rows="3" style="resize: none;width: 240px" id="desc" name="cDesc"></textarea></td></tr>
+                    <tr><td> <button type="submit" class="btn btn-default">提交</button></td></tr>
+                    <tr><td><input type="text" class="hidden" id="duser" name="cDuser"></td></tr>
+                </table>
+            </form>
+        </div>
+            </div>
+
+
+        </div>
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                我们比您 更懂您的身体💗
+            </div>
+
+        </div>
+    </div>
+</footer>
+<script>
+    var aList=document.querySelectorAll('.navn-list h2');
+    var aHide=document.querySelectorAll('.hidee');
+    var aIcon=document.querySelectorAll('.navn-list i');
+    var aPost1=document.getElementById('emm1');
+    var aPost2=document.getElementById('emm2');
+    var aPost3=document.getElementById('emm3');
+    var lastIndex= 0;
+    for(var i=0;i<aList.length;i++){
+        aList[i].index = i;
+        aList[i].isClick= false;
+        aList[i].onclick=function(){
+            aHide[lastIndex].style.height='0';
+            aList[lastIndex].className='';
+            aIcon[lastIndex].className='';
+            if(this.isClick){
+                this.isClick =false;
+            }
+            else{
+                aHide[this.index].style.height='150px';
+                aList[this.index].className='on';
+                aIcon[this.index].className='on';
+                aList[lastIndex].isClick=false;
+                this.isClick = true;
+                lastIndex = this.index;
+            }
+
+        }
+    }
+    aPost1.onclick=function(){
+        document.getElementById("hiit").style.display='block';
+        document.getElementById("hiit1").style.display='none';
+        document.getElementById("hiit2").style.display='none';
+    }
+    aPost2.onclick=function(){
+        document.getElementById("hiit").style.display='none';
+        document.getElementById("hiit1").style.display='block';
+        document.getElementById("hiit2").style.display='none';
+    }
+    aPost3.onclick=function(){
+        document.getElementById("hiit").style.display='none';
+        document.getElementById("hiit1").style.display='none';
+        document.getElementById("hiit2").style.display='block';
+    }
+
+
+</script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
